@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Xml;
+using System.IO;
+
+namespace Haiti
+{
+
+    enum Language { English, Creole }
+
+    public partial class Default : System.Web.UI.Page
+    {
+
+        private Language _inputLanguage = Language.English;
+        private Language _outputLanguage = Language.Creole;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected void SwitchLanguage(object sender, EventArgs e)
+        {
+            RadioButtonList list = (RadioButtonList)sender;
+            if (list.SelectedValue == "1")
+            {
+                _inputLanguage = Language.English;
+                _outputLanguage = Language.Creole;
+
+                InputFlag.ImageUrl = "~/images/flags/usa.jpg";
+                OutputFlag.ImageUrl = "~/images/flags/haiti.jpg";
+
+                TranslateButton.Text = "Translate";
+            }
+            else
+            {
+                _inputLanguage = Language.Creole;
+                _outputLanguage = Language.English;
+
+                InputFlag.ImageUrl = "~/images/flags/haiti.jpg";
+                OutputFlag.ImageUrl = "~/images/flags/usa.jpg";
+
+                TranslateButton.Text = "Tradwi";
+            }
+        }
+
+        protected void Translate_OnClick(object sender, EventArgs e)
+        {
+            String[] input = InputText.Text.Trim().Split(' ');
+
+<<<<<<< .mine
+        private String Translate(String[] input)
+        {
+            String output = String.Empty;
+
+            // Open the XML file
+            XmlDocument doc = new XmlDocument();
+            doc.Load(File.OpenText(Server.MapPath("~/resources/E2KDictionary.xml")));
+            var ll = doc.SelectNodes("Dictionaries//DicK2E//Term");
+
+            int total = 0;
+            int translated = 0;
+            // Translate
+            foreach (String s in input)
+            {
+                total++;
+
+                String o = String.Empty;
+                if (TranslateWord(ll, s, out o))
+                {
+                    translated++;
+                }
+
+                if (o == String.Empty)
+                    o = "unknown ";
+
+                output += o;
+            }
+
+            int percent = 0;
+            
+Statistics.Text = "Translated {0} of {1} words.  {2} percent complete.", translated.ToString(), total.ToString(), percent.ToString())
+
+            return output;
+=======
+            Translator translator = new Translator();
+            translator.UnknownText = "unknown";
+            OutputText.Text = translator.Translate(input, Server);
+>>>>>>> .r6
+        }
+
+
+    }
+}

@@ -1,0 +1,5 @@
+C:\Users\Dave\Documents\Visual Studio 2008\Projects\Haiti\Haiti\bin\Haiti.dll
+C:\Users\Dave\Documents\Visual Studio 2008\Projects\Haiti\Haiti\bin\Haiti.pdb
+C:\Users\Dave\Documents\Visual Studio 2008\Projects\Haiti\Haiti\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dave\Documents\Visual Studio 2008\Projects\Haiti\Haiti\obj\Debug\Haiti.dll
+C:\Users\Dave\Documents\Visual Studio 2008\Projects\Haiti\Haiti\obj\Debug\Haiti.pdb
